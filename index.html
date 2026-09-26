@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Tutor - Audio Experience</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="app-container">
+
+    <section id="landing-page" class="page active">
+      <div class="content-wrapper">
+        
+        <div class="upload-circle-wrapper">
+          <label for="file-input" class="upload-circle-btn" title="Upload course content, slides, notes">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <polyline points="9 11 12 8 15 11"/>
+              <line x1="12" y1="8" x2="12" y2="16"/>
+            </svg>
+          </label>
+          <input type="file" id="file-input" multiple hidden>
+          <span id="file-count-badge" class="file-badge hidden">0 files selected</span>
+        </div>
+
+        <div class="input-container">
+          <textarea id="prompt-input" placeholder="Type instructions for your podcast audio lesson..."></textarea>
+          <button id="send-btn" class="send-btn" title="Generate Podcast">
+            <svg class="icon send-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 2L11 13"/>
+              <path d="M22 2L15 22L11 13L2 9L22 2Z"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="player-page" class="page">
+      <div class="content-wrapper">
+        
+        <div id="pulse-circle" class="pulse-circle paused">
+          <div class="circle-layer layer-3"></div>
+          <div class="circle-layer layer-2"></div>
+          <div class="circle-layer layer-1"></div>
+          <div class="circle-core">
+            <svg id="hand-icon" class="hand-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 11V6a2 2 0 0 0-4 0v5"/>
+              <path d="M14 10V4a2 2 0 0 0-4 0v6"/>
+              <path d="M10 10.5V2a2 2 0 0 0-4 0v9"/>
+              <path d="M6 10a2 2 0 0 0-2 2v5a7 7 0 0 0 14 0v-6"/>
+            </svg>
+          </div>
+        </div>
+
+        <div id="status-text" class="status-text">Preparing your lesson...</div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <audio id="audio-player"></audio>
+
+  <script src="main.js"></script>
+</body>
+</html>
